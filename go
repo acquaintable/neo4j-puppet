@@ -7,8 +7,8 @@ die(){
 }
 
 uid=`id -u`
-if [ $uid != 0 ]; then 
-	die "Usage: sudo $0 [true | false] (Accept/decline Oracle License Agreement) [username] [password] (Neo4J username/password)"
+if [ $uid != 0 ]; then
+	die "Usage: sudo $0 [true | false] (Accept/Decline Oracle License Agreement) [username] [password] (Neo4J username/password)"
 fi
 
 [ "${1}" == "true" ] && oracle=true || oracle=false
@@ -33,7 +33,7 @@ oracle_license(){
 }
 
 download_neo4j_repo(){
-	    wget -q -O neo4j-puppet.zip https://github.com/neo4j-contrib/neo4j-puppet/archive/master.zip
+	    wget -q -O neo4j-puppet.zip https://github.com/acquaintable/neo4j-puppet/archive/master.zip
 }
 
 install_deb_puppet(){
@@ -78,9 +78,9 @@ ubuntu_install(){
 	'maverick')
 		install_deb_puppet $distro_version
 		;;
-	
+
 	*)
-		die "$distro_version ubuntu/debian distro unsupported by Puppet at this time."
+		die "$distro_version Ubuntu/Debian distro unsupported by Puppet at this time."
 		;;
 	esac
 

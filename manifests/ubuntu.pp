@@ -42,6 +42,7 @@ class neo4j::ubuntu {
       require     => [Package['neo4j'],
                       Class['neo4j::linux'],
                       File['neo4j config file'],
+                      File['neo4j low level config file'],
                       File['neo4j auth extension link'],
                       Exec['bump the minimum heap size'],
                       Exec['bump the maximum heap size'],
@@ -85,6 +86,13 @@ class neo4j::ubuntu {
       require  => Package['neo4j'],
       owner    => neo4j,
       group    => adm;
+
+    'neo4j low level config file':
+      path     => '/var/lib/neo4j/conf/neo4j.properties',
+      content  => template('neo4j/neo4j.properties.erb'),
+      require  => Package['neo4j'],
+      owner    => neo4j,
+      group    => adm;
   }
 
   package {
@@ -98,7 +106,7 @@ class neo4j::ubuntu {
       ensure  => running,
       enable  => true,
       require => Exec['restart neo4j'],
-      subscribe => File['neo4j config file'];
+      subscribe => [File['neo4j config file'], File['neo4j low level config file']];
   }
 
 }

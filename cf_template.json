@@ -60,7 +60,7 @@
                 ],
                 "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
                         "#!/bin/bash -v\n",
-                        "wget -O /var/tmp/go https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go\n",
+                        "wget -O /var/tmp/go https://raw.github.com/acquaintable/neo4j-puppet/master/go\n",
                         "chmod +x /var/tmp/go\n",
                         "sudo /var/tmp/go ", { "Ref" : "AcceptOracleLicense" } , " ", {"Ref": "Neo4jUserName"}, " ", {"Ref": "Neo4jPassword"}, "\n"
                       ]]}},

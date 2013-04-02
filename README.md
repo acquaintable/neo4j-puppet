@@ -32,7 +32,7 @@ Advanced Usage
 
 * Run a shell on it, and apply the commands below (you can paste them directly in)
 
-`wget https://raw.github.com/neo4j-contrib/neo4j-puppet/master/go`
+`wget https://raw.github.com/acquaintable/neo4j-puppet/master/go`
 
 `chmod +x go`
 

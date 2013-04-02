@@ -21,8 +21,11 @@ Usage
 -----
 (for those new to Amazon EC2)
 
-See the [CloudFormation notes](https://github.com/neo4j-contrib/neo4j-puppet/blob/master/README.CLOUDFORMATION.md)
+This fork of the neo4j puppet configuration has been tested on 04-02-2013 and is working perfectly.
 
+Follow the instruction in the [CloudFormation notes](https://github.com/neo4j-contrib/neo4j-puppet/blob/master/README.CLOUDFORMATION.md), **except use this as the stack template**:
+
+`http://s3.amazonaws.com/acquaintable/puppet/cf_template.json` (copy it)
 
 Advanced Usage
 --------------
